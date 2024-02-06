@@ -26,9 +26,8 @@ public class DriverEdit extends StandardEditor<Driver> {
         if (document.getAttachment() != null) {
             LinkButton linkButton = uiComponents.create(LinkButton.class);
             linkButton.setCaption(document.getAttachment().getFileName());
-            linkButton.addClickListener(clickEvent -> {
-                downloader.download(document.getAttachment());
-            });
+            linkButton.addClickListener(clickEvent ->
+                downloader.download(document.getAttachment()));
             return linkButton;
         }
         return null;
